@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Inicio</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.6.0-1/css/bootstrap.min.css}">
+	</head>
+	<body>
+		<header th:replace="/layouts/header :: header"> </header>
+		<div class="container"> 
+			<div class="row">
+				<div class="col-sm-12 col-md-10">
+					<div class="card-deck">
+					  <div class="card">
+					    <img src="https://static.misionesonline.news/wp-content/uploads/2021/01/granizo-5-730x417.jpg" />
+					    <div class="card-body">
+					      <h5 class="card-title">Semana Fría Para Jujuy</h5>
+					      <p class="card-text">Se esperan temperaturas muy bajas para la provincia de jujuy en los proximos días, se recomienda salir con paraguas.</p>
+					      <p class="card-text"><small class="text-muted">Noticia en proceso...</small></p>
+					    </div>
+					  </div>
+					  <div class="card">
+					    <img src="https://us.cdn.eltribuno.com/062019/1559429355992.jpg" class="card-img-top" >
+					    <div class="card-body">
+					      <h5 class="card-title">¡Narices Frías en acción!</h5>
+					      <p class="card-text">En el día de la fecha, el grupo de narices frías, logró conseguir donaciones masivas de alimentos de parte de Pedigree.</p>
+					      <p class="card-text"><small class="text-muted">Noticia en proceso...</small></p>
+					    </div>
+					  </div>
+					  <div class="card">
+					    <img src="https://eleconomista.com.ar/wp-content/uploads/2021/04/dolar-3.jpg" class="card-img-top" >
+					    <div class="card-body">
+					      <h5 class="card-title">Incautaron 10.000 Dolares de un camión</h5>
+					      <p class="card-text">En la ciudad de Perico, en la zona de acceso, uniformados detuvieron un camión con actitud sospechosa, incautando así la dicha suma de dinero.</p>
+					      <p class="card-text"><small class="text-muted">Noticia en proceso...</small></p>
+					    </div>
+					  </div>
+					</div>				
+				 </div>
+				 <aside th:replace="/layouts/publicidad :: aside"> </aside>
+			 </div>
+		</div>
+		
+		<footer th:replace="/layouts/footer :: footer"> </footer>
+		<script type="text/javascript" th:src=@{/webjars/jquery/3.5.1/jquery.min.js}></script>
+		<script type="text/javascript" th:src=@{/webjars/popper.js/1.16.1-lts/popper.min.js}></script>
+		<script type="text/javascript" th:src=@{/webjars/bootstrap/4.6.0-1/js/bootstrap.min.js}></script>
+	</body>
+</html>
