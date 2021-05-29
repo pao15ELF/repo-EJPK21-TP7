@@ -74,7 +74,7 @@ public class ProductoController {
 	@GetMapping("/producto/editar/{id}")
 	public ModelAndView getEditarProductoPage(@PathVariable(value = "id") Long id) {
 		
-		ModelAndView mav = new ModelAndView("redirect:/producto");
+		ModelAndView mav = new ModelAndView("nuevoproducto");
 		mav.addObject("producto",  productoService.findById(id));
 		return mav;
 	}
