@@ -25,9 +25,10 @@
 									<th> Ultima Compra</th>
 									<th> Edad </th>
 									<th> Teléfono </th>
-									<th> T.D. cumpleaños</th>
+									<th> T.D. Cumpleaños</th>
 									<th> T.D. Fecha Nac.</th>
 									<th> T.D. Ultima Compra</th>
+									<th> Acciones </th>
 				 				</tr>
 						</thead>
 							<tbody>
@@ -43,6 +44,11 @@
 									<td th:text="${c.getTiempoHastaCumple}"> </td>
 									<td th:text="${c.getTTransDesdeFechaN}"> </td>
 									<td th:text="${c.getTTransDesdeUltCompra}"> </td>
+									<td> 
+										<a th:href="@{/cliente/editar/}+${c.id}" class= "btn btn-warning" >EDITAR</a>
+										<a th:href="@{/cliente/eliminar/}+${c.id}" class= "btn btn-danger" >ELIMINAR</a>
+										
+									</td>
 								</tr>
 							</tbody>
 						</table>
