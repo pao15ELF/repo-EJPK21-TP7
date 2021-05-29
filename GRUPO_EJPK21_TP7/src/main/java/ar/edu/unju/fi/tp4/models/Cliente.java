@@ -6,13 +6,18 @@ import java.time.LocalDateTime;
 import java.time.Period;
 import java.time.temporal.ChronoUnit;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
 
@@ -47,6 +52,11 @@ public class Cliente {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "cli_fechaUltimaCompra" , nullable = true)
 	private LocalDate fechaUltimaCompra; 
+	
+	@Autowired
+	@JoinColumn(name="cue_id")
+	@OneToOne(cascade = CascadeType.ALL , fetch = FetchType.LAZY)
+	private Cuenta cuenta;
 	
 	public Cliente() {
 	 //	
@@ -222,13 +232,34 @@ public class Cliente {
 			
 			return tiempoTrans;
 		}
-	@Override
-	public String toString() {
-		return "Cliente [tipoDocumento=" + tipoDocumento + ", nroDocumento=" + nroDocumento + ", nombreApellido="
-				+ nombreApellido + ", email=" + email + ", password=" + password + ", fechaNacimiento="
-				+ fechaNacimiento + ", codigoAreaTelefono=" + codigoAreaTelefono + ", nroTelefono=" + nroTelefono
-				+ ", fechaUltimaCompra=" + fechaUltimaCompra + "]";
-	}
+
+
+		/**
+		 * @return the cuenta
+		 */
+		public Cuenta getCuenta() {
+			return cuenta;
+		}
+
+
+		/**
+		 * @param cuenta the cuenta to set
+		 */
+		public void setCuenta(Cuenta cuenta) {
+			this.cuenta = cuenta;
+		}
+
+
+		@Override
+		public String toString() {
+			return "Cliente [id=" + id + ", tipoDocumento=" + tipoDocumento + ", nroDocumento=" + nroDocumento
+					+ ", nombreApellido=" + nombreApellido + ", email=" + email + ", password=" + password
+					+ ", fechaNacimiento=" + fechaNacimiento + ", codigoAreaTelefono=" + codigoAreaTelefono
+					+ ", nroTelefono=" + nroTelefono + ", fechaUltimaCompra=" + fechaUltimaCompra + ", cuenta=" + cuenta
+					+ "]";
+		}
+	
+		
 
 	
 }
